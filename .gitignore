@@ -19,3 +19,22 @@
 
 # Go workspace file
 go.work
+
+# Binary data
+bin/
+__debug_bin
+
+# VSCode data
+pkg/.vscode/launch.json
+.vscode/launch.json
+
+# removing sesetive data
+..bfg-report/
+
+# removing dynamic content and test data
+.bash_history
+data/
+test/
+*.sock
+*.cert
+*.crt
