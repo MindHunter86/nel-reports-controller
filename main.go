@@ -95,6 +95,27 @@ func main() {
 			Name:  "http-debug",
 			Usage: "",
 		},
+
+		&cli.StringFlag{
+			Name:  "http-listen-addr",
+			Usage: "Ex: 127.0.0.1:8080, :8080",
+			Value: "127.0.0.1:8080",
+		},
+		&cli.StringFlag{
+			Name:  "http-trusted-proxies",
+			Usage: "Ex: 10.0.0.0/8; Separated by comma",
+		},
+		&cli.BoolFlag{
+			Name: "http-prefork",
+			Usage: `Enables use of the SO_REUSEPORT socket option;
+							if enabled, the application will need to be ran
+							through a shell because prefork mode sets environment variables`,
+		},
+		&cli.BoolFlag{
+			Name:  "http-cors",
+			Usage: "enable cors requests serving",
+			Value: true,
+		},
 	}
 
 	app.Action = func(c *cli.Context) (e error) {
